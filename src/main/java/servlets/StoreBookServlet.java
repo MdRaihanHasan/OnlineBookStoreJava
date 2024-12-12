@@ -84,7 +84,7 @@ public class StoreBookServlet extends HttpServlet {
                 + "      <td>" + book.getAuthor() + "</td>\r\n"
                 + "      <td><span>&#36;</span> " + book.getPrice() + "</td>\r\n"
                 + "      <td>" + book.getQuantity() + "</td>\r\n"
-                + "      <td style='text-align:center; display: flex;justify-content: space-between;'>\r\n"
+                + "      <td style='text-align:center; display: flex;  justify-content: space-between;'>\r\n"
                 + "        <form method='post' action='updatebook' style='display:inline-block;'>\r\n"
                 + "          <input type='hidden' name='bookId' value='" + book.getBarcode() + "'/>\r\n"
                 + "          <button type='submit' class=\"btn btn-primary btn-sm\">Edit</button>\r\n"

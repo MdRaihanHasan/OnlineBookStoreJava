@@ -46,11 +46,11 @@ public class StoreBookServlet extends HttpServlet {
 
             // Read the books from the database with the respective bookIds
             List<Book> books = bookService.getAllBooks();
-            pw.println("<div id='topmid' style='background-color:grey'>Books Available In the Store</div>");
-            pw.println("<table class=\"table table-hover\" style='background-color:white'>\r\n"
+            pw.println("<div id='topmid' style='background-color:#007bff; color:white; margin-top: 20px; border-radius: 5px; text-align:center; padding:10px; font-size:1.5rem; font-weight:bold;'>Books Lists</div>");
+            pw.println("<table class=\"table table-striped table-bordered\" style='background-color:#f8f9fa; margin-top:20px;'>\r\n"
                     + "  <thead>\r\n"
-                    + "    <tr style='background-color:black; color:white;'>\r\n"
-                    + "      <th scope=\"col\">BookId</th>\r\n"
+                    + "    <tr style='background-color:#343a40; color:white; text-align:center;'>\r\n"
+                    + "      <th scope=\"col\">Book ID</th>\r\n"
                     + "      <th scope=\"col\">Name</th>\r\n"
                     + "      <th scope=\"col\">Author</th>\r\n"
                     + "      <th scope=\"col\">Price</th>\r\n"
@@ -59,6 +59,7 @@ public class StoreBookServlet extends HttpServlet {
                     + "    </tr>\r\n"
                     + "  </thead>\r\n"
                     + "  <tbody>\r\n");
+
             if (books == null || books.size() == 0) {
                 pw.println("    <tr style='background-color:green'>\r\n"
                         + "      <th scope=\"row\" colspan='6' style='color:yellow; text-align:center;'> No Books Available in the store </th>\r\n"
@@ -82,14 +83,19 @@ public class StoreBookServlet extends HttpServlet {
                 + "      <td>" + book.getName() + "</td>\r\n"
                 + "      <td>" + book.getAuthor() + "</td>\r\n"
                 + "      <td><span>&#36;</span> " + book.getPrice() + "</td>\r\n"
-                + "      <td>"
-                + book.getQuantity()
+                + "      <td>" + book.getQuantity() + "</td>\r\n"
+                + "      <td style='text-align:center; display: flex;justify-content: space-between;'>\r\n"
+                + "        <form method='post' action='updatebook' style='display:inline-block;'>\r\n"
+                + "          <input type='hidden' name='bookId' value='" + book.getBarcode() + "'/>\r\n"
+                + "          <button type='submit' class=\"btn btn-primary btn-sm\">Edit</button>\r\n"
+                + "        </form>\r\n"
+                + "        <form method='post' action='removebook' style='display:inline-block; margin-left:5px;'>\r\n"
+                + "          <input type='hidden' name='bookId' value='" + book.getBarcode() + "'/>\r\n"
+                + "          <button type='submit' class=\"btn btn-danger btn-sm\">Delete</button>\r\n"
+                + "        </form>\r\n"
                 + "      </td>\r\n"
-                + "      <td><form method='post' action='updatebook'>"
-                + "          <input type='hidden' name='bookId' value='" + book.getBarcode() + "'/>"
-                + "          <button type='submit' class=\"btn btn-success\">Update</button>"
-                + "          </form>"
                 + "    </tr>\r\n";
     }
+
 
 }

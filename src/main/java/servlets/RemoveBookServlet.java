@@ -44,13 +44,9 @@ public class RemoveBookServlet extends HttpServlet {
             String responseCode = bookService.deleteBookById(bookId.trim());
             if (ResponseCode.SUCCESS.name().equalsIgnoreCase(responseCode)) {
                 pw.println("<table class=\"tab my-5\"><tr><td>Book Removed Successfully</td></tr></table>");
-                pw.println(
-                        "<table class=\"tab\"><tr><td><a href=\"removebook\">Remove more Books</a></td></tr></table>");
 
             } else {
                 pw.println("<table class=\"tab my-5\"><tr><td>Book Not Available In The Store</td></tr></table>");
-                pw.println(
-                        "<table class=\"tab\"><tr><td><a href=\"removebook\">Remove more Books</a></td></tr></table>");
             }
             pw.println("</div>");
         } catch (Exception e) {

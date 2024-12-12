@@ -55,7 +55,7 @@ public class AddBookServlet extends HttpServlet {
             String message = bookService.addBook(book);
             if ("SUCCESS".equalsIgnoreCase(message)) {
                 pw.println(
-                        "<table class=\"tab\"><tr><td>Book Detail Updated Successfully!<br/>Add More Books</td></tr></table>");
+                        "<table class=\"tab\"><tr><td>Book Successfully Added to Store!</td></tr></table>");
             } else {
                 pw.println("<table class=\"tab\"><tr><td>Failed to Add Books! Fill up CareFully</td></tr></table>");
                 //rd.include(req, res);
@@ -67,23 +67,34 @@ public class AddBookServlet extends HttpServlet {
     }
     
     private static void showAddBookForm(PrintWriter pw) {
-        String form = "<table class=\"tab my-5\" style=\"width:40%;\">\r\n"
+        String form = "<table class=\"table table-bordered my-5\" style=\"width:50%; margin:auto; background-color:#f8f9fa; box-shadow: 0 4px 8px rgba(0,0,0,0.2); border-radius:10px;\">\r\n"
                 + "        <tr>\r\n"
-                + "            <td>\r\n"
-                + "                <form action=\"addbook\" method=\"post\">\r\n"
-                + "                    <!-- <label for=\"bookCode\">Book Code : </label><input type=\"text\" name=\"barcode\" id=\"bookCode\" placeholder=\"Enter Book Code\" required><br/> -->\r\n"
-                + "                    <label for=\"bookName\">Book Name : </label> <input type=\"text\" name=\"name\" id=\"bookName\" placeholder=\"Enter Book's name\" required><br/>\r\n"
-                + "                    <label for=\"bookAuthor\">Book Author : </label><input type=\"text\" name=\"author\" id=\"bookAuthor\" placeholder=\"Enter Author's Name\" required><br/>\r\n"
-                + "                    <label for=\"bookPrice\">Book Price : </label><input type=\"number\" name=\"price\" placeholder=\"Enter the Price\" required><br/>\r\n"
-                + "                    <label for=\"bookQuantity\">Book Qnty : </label><input type=\"number\" name=\"quantity\" id=\"bookQuantity\" placeholder=\"Enter the quantity\" required><br/>\r\n"
-                + "                    <input class=\"btn btn-success my-2\" type=\"submit\" value=\" Add Book \">\r\n"
+                + "            <td style=\"padding:20px;\">\r\n"
+                + "                <form action=\"addbook\" method=\"post\" style=\"font-family:'Poppins', sans-serif;\">\r\n"
+                + "                    <div class=\"mb-3\">\r\n"
+                + "                        <label for=\"bookName\" class=\"form-label\">Book Name:</label>\r\n"
+                + "                        <input type=\"text\" name=\"name\" id=\"bookName\" class=\"form-control\" placeholder=\"Enter Book's name\" required>\r\n"
+                + "                    </div>\r\n"
+                + "                    <div class=\"mb-3\">\r\n"
+                + "                        <label for=\"bookAuthor\" class=\"form-label\">Book Author:</label>\r\n"
+                + "                        <input type=\"text\" name=\"author\" id=\"bookAuthor\" class=\"form-control\" placeholder=\"Enter Author's Name\" required>\r\n"
+                + "                    </div>\r\n"
+                + "                    <div class=\"mb-3\">\r\n"
+                + "                        <label for=\"bookPrice\" class=\"form-label\">Book Price:</label>\r\n"
+                + "                        <input type=\"number\" name=\"price\" id=\"bookPrice\" class=\"form-control\" placeholder=\"Enter the Price\" required>\r\n"
+                + "                    </div>\r\n"
+                + "                    <div class=\"mb-3\">\r\n"
+                + "                        <label for=\"bookQuantity\" class=\"form-label\">Book Quantity:</label>\r\n"
+                + "                        <input type=\"number\" name=\"quantity\" id=\"bookQuantity\" class=\"form-control\" placeholder=\"Enter the quantity\" required>\r\n"
+                + "                    </div>\r\n"
+                + "                    <div class=\"text-center\">\r\n"
+                + "                        <input class=\"btn btn-primary\" type=\"submit\" value=\"Add Book\">\r\n"
+                + "                    </div>\r\n"
                 + "                </form>\r\n"
                 + "            </td>\r\n"
-                + "        </tr>  \r\n"
-                + "        <!-- <tr>\r\n"
-                + "            <td><a href=\"index.html\">Go Back To Home Page</a></td>\r\n"
-                + "        </tr> -->\r\n"
+                + "        </tr>\r\n"
                 + "    </table>";
         pw.println(form);
+
     }
 }

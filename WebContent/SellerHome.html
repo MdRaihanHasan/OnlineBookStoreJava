@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="ISO-8859-1">
@@ -13,94 +14,86 @@
 <style>
     /* General Body Styling */
     body {
-        background-color: #f8f9fa;
-        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        font-family: 'Poppins', sans-serif;
     }
 
     /* Navbar Styling */
     .navbar {
-        background-color: #343a40 !important; /* Dark background */
-    }
-
-    .navbar a {
-        color: #fff !important; /* White text */
-        font-weight: bold;
-    }
-
-    .navbar a:hover {
-        color: #e9ecef !important; /* Lighter hover color */
-    }
-
-    .navbar-toggler-icon {
-        color: #fff !important; /* White toggle icon */
-    }
-
-    .navbar-nav .nav-item {
-        margin-right: 20px; /* Space between nav items */
-    }
-
-    .navbar-nav .nav-item a {
-        font-size: 1.1rem;
-        padding: 12px 18px;
-    }
-
-    .navbar-nav .nav-item a.active {
-        color: #007bff !important; /* Active link color */
-        font-weight: bold;
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .navbar-brand img {
-        width: 60px;
-        height: 30px;
+        width: 50px;
+        height: auto;
     }
 
-    /* Navbar on small screens */
+    .navbar a {
+        color: #fff;
+        font-size: 1.1rem;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+        color: #007bff;
+        background-color: #e3f2fd;
+        border-radius: 4px;
+    }
+
     .navbar-toggler {
-        background-color: #007bff; /* Button background */
+        border: none;
+        color: #fff;
     }
 
-    /* Small Screen Styling for Navbar Links */
+    .navbar-toggler-icon {
+        background-image: none;
+        font-size: 1.5rem;
+    }
+
+    .nav-item {
+        margin-right: 15px;
+    }
+
+    .nav-link.active {
+        background-color: #e3f2fd;
+        color: #007bff;
+        border-radius: 4px;
+    }
+
+    /* Small Screen Navbar Styling */
     .navbar-collapse {
-        text-align: center; /* Center the links in mobile view */
+        justify-content: center;
     }
 
     .navbar-nav .nav-item a {
         padding: 10px 15px;
     }
-
-    .navbar-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar-nav .nav-item a:hover {
-        background-color: #007bff; /* Hover effect background */
-        color: #fff;
-        border-radius: 4px;
-    }
+    
+    .navbar-nav .nav-item a {
+     padding: 0; 
+	}
 </style>
-
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-dark" style="margin-bottom: 0px">
-            <a class="navbar-brand">
-                <img src="logo.png" alt="Book Store Logo" width="60" height="30px">
-            </a>
-            <button class="navbar-toggler" style="background-color: white;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="color: #fff; font-size: 28px;"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="storebooks" id="home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="storebooks" id="storebooks">Store Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="addbook" id="addbook">Add Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="removebook" id="removebook">Remove Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about" id="about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logout" id="logout">Logout</a></li>
-                </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Book Store Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon text-white">&#9776;</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="storebooks" id="home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="storebooks" id="storebooks">Store Books</a></li>
+                        <li class="nav-item"><a class="nav-link" href="addbook" id="addbook">Add Books</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about" id="about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout" id="logout">Logout</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>

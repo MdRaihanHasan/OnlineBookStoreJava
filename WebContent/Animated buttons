@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Animated Buttons</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .outer {
+      position: relative;
+      margin: 20px;
+      width: 220px;
+      height: 70px;
+      background: linear-gradient(90deg, #14ffe9, #ffeb3b, #ff00e0);
+      border-radius: 50px;
+      overflow: hidden;
+      animation: gradientShift 3s infinite linear;
+    }
+
+    .outer button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 60px;
+      width: 210px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .outer:hover {
+      background: linear-gradient(90deg, #ff00e0, #14ffe9, #ffeb3b);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .btn {
+      margin: 10px;
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      background-color: RoyalBlue;
+    }
+
+    .glowing-btn {
+      margin: 10px;
+      padding: 15px 30px;
+      background-color: #1c87c9;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 18px;
+      text-transform: uppercase;
+      cursor: pointer;
+      animation: glowing 1.5s infinite;
+    }
+
+    @keyframes glowing {
+      0%, 100% { box-shadow: 0 0 5px #2ba805; background-color: #2ba805; }
+      50% { box-shadow: 0 0 20px #49e819; background-color: #49e819; }
+    }
+
+    .perspective-btn {
+      margin: 20px;
+      perspective: 1000px;
+    }
+
+    .perspective-btn a {
+      display: inline-block;
+      width: 180px;
+      height: 55px;
+      background: #000;
+      color: white;
+      border: 2px solid white;
+      text-align: center;
+      line-height: 55px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transform: translateZ(-25px);
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+    }
+
+    .perspective-btn a:hover {
+      transform: translateZ(-25px) rotateX(90deg);
+    }
+
+    .perspective-btn a:before, .perspective-btn a:after {
+      content: "Button";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+    }
+
+    .perspective-btn a:before {
+      background: black;
+      color: white;
+      transform: rotateX(0deg) translateZ(25px);
+    }
+
+    .perspective-btn a:after {
+      background: white;
+      color: black;
+      transform: rotateX(90deg) translateZ(25px);
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <button>BUTTON 1</button>
+  </div>
+
+  <button class="btn"><i class="fa fa-home"></i> Home</button>
+  <button class="btn"><i class="fa fa-bars"></i> Menu</button>
+  <button class="btn"><i class="fa fa-trash"></i> Trash</button>
+
+  <div class="perspective-btn">
+    <a href="#">BUTTON 2</a>
+  </div>
+
+  <button class="glowing-btn">BUTTON 3</button>
+</body>
+</html>
